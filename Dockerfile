@@ -16,9 +16,7 @@ RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt /code/
 COPY manage.py /code/
-RUN mkdir /code/simpleApp
-WORKDIR /code/simpleApp
-COPY simpleApp /code/simpleApp
+COPY simpleApp /code
 RUN pip install -r requirements.txt
 RUN python3.6 manage.py makemigrations
 CMD python3.6 manage.py runserver 0.0.0.0:8000
