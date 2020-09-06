@@ -1,9 +1,6 @@
 FROM python:3.6-buster
 ADD . /simpleApp
 WORKDIR /simpleApp
-COPY simpleApp /simpleApp
-COPY requirements.txt requirements.txt
-COPY manage.py manage.py
 COPY ..
 RUN apt-get update -qq
 EXPOSE 8000
