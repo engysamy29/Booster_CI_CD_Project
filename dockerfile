@@ -1,7 +1,20 @@
-FROM ubuntu
-RUN apt-get update -qq
+FROM ubuntu:14.04
+
+# Install dependencies
 RUN apt-get -y install python3.6
-RUN apt-get -qqy install python3-pip
+RUN apt-get update && apt-get install -y \
+    software-properties-common
+RUN add-apt-repository universe
+RUN apt-get update && apt-get install -y \
+    apache2 \
+    curl \
+    git \
+    libapache2-mod-php5 \
+    php5 \
+    php5-mcrypt \
+    php5-mysql \
+    python3.4 \
+    python3-pip
 ADD . /simpleApp
 WORKDIR /simpleApp
 COPY . .
