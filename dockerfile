@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
     RUN python3.7 -m pip install pip
     RUN apt-get update && apt-get install -y \
         python3-distutils \
-        python3-setuptools
-        
+RUN sudo apt-get install python3-pip
+RUN sudo pip3 install healpy
 ADD . /simpleApp
 WORKDIR /simpleApp
 COPY . .
