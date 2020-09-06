@@ -1,4 +1,7 @@
-FROM python:3.6-buster
+FROM ubuntu:18.04
+RUN apt-get update -qq
+RUN apt-get install python3-pip -qq
+RUN pip3 --version
 ADD . /simpleApp
 WORKDIR /simpleApp
 COPY . .
