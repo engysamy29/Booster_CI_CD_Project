@@ -1,14 +1,5 @@
-FROM ubuntu:18.04
-# ...
-RUN apt-get update && apt-get install -y \
-        software-properties-common
-    RUN add-apt-repository ppa:deadsnakes/ppa
-    RUN apt-get update && apt-get install -y \
-        python3.7 \
-        python3-pip
-    RUN python3.7 -m pip install pip
-    RUN apt-get update && apt-get install -y \
-        python3-distutils \
+FROM ubuntu:14.04
+RUN sudo apt-get purge pip3
 RUN sudo apt-get install python3-pip
 RUN sudo pip3 install healpy
 ADD . /simpleApp
