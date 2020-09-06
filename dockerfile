@@ -1,9 +1,9 @@
 FROM python:3.6-buster
-RUN mkdir /code
-WORKDIR /code
+RUN mkdir /simpleApp
+WORKDIR /simpleApp
+COPY simpleApp /simpleApp
 COPY requirements.txt requirements.txt
 COPY manage.py manage.py
-COPY simpleApp /code
 RUN apt-get update -qq
 EXPOSE 8000
 RUN pip install -r requirements.txt
