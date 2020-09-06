@@ -1,7 +1,5 @@
 FROM ubuntu:14.04
 
-# Install dependencies
-RUN apt-get -y install python3.6
 RUN apt-get update && apt-get install -y \
     software-properties-common
 RUN add-apt-repository universe
