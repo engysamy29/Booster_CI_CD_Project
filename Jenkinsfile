@@ -16,7 +16,7 @@ pipeline {
             steps {
                 withCredentials([usernamePassword(credentialsId:"docker",usernameVariable:"USERNAME",passwordVariable:"PASSWORD")]){
                 sh 'docker login --username $USERNAME --password $PASSWORD'
-                sh 'dock push engy/dajngo:v1.0'
+                sh 'docker push engy/dajngo:v1.0'
                 }
             }
         }
