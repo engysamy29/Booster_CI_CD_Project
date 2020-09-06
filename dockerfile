@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM python:3.6-buster
 RUN mkdir /code
 WORKDIR /code
 COPY requirements.txt requirements.txt
