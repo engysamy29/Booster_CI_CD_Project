@@ -1,11 +1,10 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 RUN apt-get update -qq
 RUN apt-get install -y software-properties-common && \
   add-apt-repository ppa:jonathonf/python-3.6
-
-RUN apt-get install -y build-essential python3.6 python3.6-dev python3-pip python3.6-venv
-RUN apt-get install -y git
+  
+RUN pip3 install --upgrade setuptools
 
 # update pip
 RUN python3.6 -m pip install pip --upgrade
