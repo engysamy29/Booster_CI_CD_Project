@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
     php5-mcrypt \
     php5-mysql \
     python3.4 \
-    python3-pip
+    python-pip
     
 ADD . /simpleApp
 WORKDIR /simpleApp
