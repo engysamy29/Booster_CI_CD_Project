@@ -5,8 +5,6 @@ COPY requirements.txt requirements.txt
 COPY manage.py manage.py
 COPY simpleApp /code
 RUN apt-get update -qq
-RUN apt-get -y install python3.6
-RUN apt-get -qqy install python3-pip
 EXPOSE 8000
 RUN pip install -r requirements.txt
 RUN python3.6 manage.py makemigrations
