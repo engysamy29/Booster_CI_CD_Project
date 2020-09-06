@@ -1,7 +1,7 @@
 FROM python:3.6-buster
 ADD . /simpleApp
 WORKDIR /simpleApp
-COPY ..
+COPY . .
 RUN apt-get update -qq
 EXPOSE 8000
 RUN pip install -r requirements.txt
