@@ -1,13 +1,26 @@
 FROM ubuntu:14.04
 
-RUN sudo apt-get install python3-pip
-RUN sudo pip3 install healpy
+# Install dependencies
+RUN apt-get update && apt-get install -y \
+    software-properties-common
+RUN add-apt-repository universe
+RUN apt-get update && apt-get install -y \
+    apache2 \
+    curl \
+    git \
+    libapache2-mod-php5 \
+    php5 \
+    php5-mcrypt \
+    php5-mysql \
+    python3.4 \
+    python3-pip
+    
 ADD . /simpleApp
 WORKDIR /simpleApp
 COPY . .
 RUN apt-get update -qq
 EXPOSE 8000
-RUN pip install -r requirements.txt
+RUN pip3 install -r requirements.txt
 RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
 CMD ["python3.6", "manage.py", "runserver", "0.0.0.0:8000"]
