@@ -20,7 +20,6 @@ WORKDIR /simpleApp
 COPY . .
 RUN apt-get update -qq
 EXPOSE 8000
-RUN sudo pip install --upgrade setuptools 
 RUN pip install -r requirements.txt
 RUN python3.6 manage.py makemigrations
 RUN python3.6 manage.py migrate
