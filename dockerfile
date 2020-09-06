@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-RUN sudo apt-get purge pip3
+
 RUN sudo apt-get install python3-pip
 RUN sudo pip3 install healpy
 ADD . /simpleApp
