@@ -22,7 +22,7 @@ pipeline {
         }
          stage('Deploy') {
             steps {
-                sh 'docker run -d -p 4000:5000 engysamy/dajngoo_dev:v1.0'
+                sh 'docker run -d -p 6000:3000 engysamy/dajngoo_dev:v1.0'
             }  
     }
   }
