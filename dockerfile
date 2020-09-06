@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y \
     php5-mysql \
     python3.4 \
     python-pip
-  
+RUN python -m pip install --upgrade pip setuptools
 ADD . /simpleApp
 WORKDIR /simpleApp
 COPY . .
